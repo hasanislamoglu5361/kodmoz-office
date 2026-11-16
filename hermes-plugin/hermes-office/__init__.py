@@ -45,6 +45,9 @@ ROLE_NAMES = {
     "ops": "Operasyon",
     "devops": "DevOps",
     "orchestrator": "Orkestratör",
+    "leaf": "Alt Görev",
+    "subagent": "Alt Görev",
+    "worker": "İşçi",
 }
 
 

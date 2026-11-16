@@ -299,6 +299,13 @@ export class OfficeStore {
       }
       this.emit('status', agent.id, `${agent.name} Docker'da çevrimiçi`)
     } else if (!online && wasOnline) {
+      if (agent.task) {
+        this.emit('status', agent.id, `${agent.name}: görev durduruldu`, {
+          detail: agent.task.title,
+        })
+        agent.task = null
+        agent.queue = []
+      }
       agent.status = 'offline'
       agent.activity = undefined
       this.emit('status', agent.id, `${agent.name} Docker'da çevrimdışı`)
@@ -950,7 +957,14 @@ export class OfficeStore {
     if (!free) throw new Error('Ofiste boş masa kalmadı.')
 
     const code = shortId(input.sessionId).slice(0, 4).toLocaleUpperCase('tr-TR')
-    const name = (input.name || `Ajan ${code}`).slice(0, 48)
+    const baseName = (input.name || `Ajan ${code}`).slice(0, 48)
+    let name = baseName
+    const usedNames = new Set([...this.agents.values()].map((agent) => agent.name))
+    if (usedNames.has(name)) {
+      let suffix = 2
+      while (usedNames.has(`${baseName} ${suffix}`.slice(0, 48))) suffix += 1
+      name = `${baseName} ${suffix}`.slice(0, 48)
+    }
     const id = `hs-${shortId(input.sessionId)}`
     const floor = this.floor(free.floor)!
     const color = AUTO_COLORS[this.agents.size % AUTO_COLORS.length]

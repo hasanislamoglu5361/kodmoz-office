@@ -325,7 +325,7 @@ Model sağlayıcısı (CommandCode vb.) görev metinlerini ve agent bağlamını
 - **Görev gönderilemiyor / `Agent API 401`:** `runtime/secrets.env` içindeki `HERMES_AGENTS_API_KEY` ile profillerin `.env` dosyasındaki `API_SERVER_KEY` aynı olmalı. `npm run docker:setup` bunu senkronlar.
 - **Model hatası:** `HERMES_LLM_BASE_URL`, `HERMES_LLM_MODEL` ve `HERMES_LLM_API_KEY` değerlerini kontrol et. Model kimliği sağlayıcının `/v1/models` çıktısındaki tam kimlik olmalı (ör. `deepseek/deepseek-v4.1-flash`).
 - **Köprü olayları gelmiyor:** Profilin `.env` dosyasında `OFFICE_URL` doğru mu? Konteynerden `curl http://host.docker.internal:4173/api/health` çalışıyor mu? `hermes -p <profil> plugins list` ile `hermes-office` etkin mi?
-- **Konteyner yeniden başladı:** Profiller `gateway_state.json` durumuna göre geri gelir. Gelmeyen profili arayüzden başlat.
+- **Konteyner yeniden başladı:** Profiller `gateway_state.json` durumuna göre geri gelir. 10 profilin tamamı 2–3 dakika içinde ayağa kalkabilir; gelmeyen profili arayüzden başlat.
 - **Port çakışması:** `8642–8651` aralığını başka bir süreç kullanıyorsa `data/office.json` portlarını ve `scripts/docker-setup.mjs` publish aralığını birlikte değiştir.
 
 ---
