@@ -1,0 +1,14 @@
+node_modules/
+dist/
+.DS_Store
+*.log
+.env
+.env.*
+!.env.example
+.zcode/
+
+runtime/
+data/agent-overrides.json
+
+__pycache__/
+*.py[cod]

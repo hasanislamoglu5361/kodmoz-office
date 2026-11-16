@@ -1,0 +1,14 @@
+name: hermes-office
+version: "1.0.0"
+description: "Hermes oturumlarını, araç çağrılarını ve alt ajan devirlerini Kodmoz Ofis görselleştirmesine canlı olarak aktarır. Fail-open observer köprüsü: araç argümanları ve dosya içerikleri gönderilmez."
+author: "Kodmoz Ofis"
+hooks:
+  - on_session_start
+  - on_session_end
+  - on_session_finalize
+  - pre_llm_call
+  - post_llm_call
+  - pre_tool_call
+  - post_tool_call
+  - subagent_start
+  - subagent_stop

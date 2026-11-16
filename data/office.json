@@ -1,0 +1,129 @@
+{
+  "floors": [
+    { "number": 3, "name": "Strateji", "subtitle": "planlama · araştırma" },
+    { "number": 2, "name": "Üretim", "subtitle": "kod · tasarım · veri" },
+    { "number": 1, "name": "Operasyon", "subtitle": "içerik · altyapı · kalite" }
+  ],
+  "agents": [
+    {
+      "id": "atlas",
+      "name": "Atlas",
+      "role": "Orkestratör",
+      "description": "İşleri planlar, agentlara dağıtır, önceliklendirir ve sonuçları birleştirir. Ofisin genel iş akışından sorumludur.",
+      "floor": 3,
+      "slot": 0,
+      "color": "#e8b45a",
+      "model": "deepseek/deepseek-v4.1-flash",
+      "profile": "default",
+      "port": 8642
+    },
+    {
+      "id": "deniz",
+      "name": "Deniz",
+      "role": "Ürün",
+      "description": "Ürün gereksinimlerini netleştirir, kapsamı ve kullanıcı akışlarını tanımlar. Özellik kararlarında ürün bakışını temsil eder.",
+      "floor": 3,
+      "slot": 1,
+      "color": "#7dd3c7",
+      "model": "deepseek/deepseek-v4.1-flash",
+      "profile": "deniz",
+      "port": 8643
+    },
+    {
+      "id": "ada",
+      "name": "Ada",
+      "role": "Araştırma",
+      "description": "Kaynakları tarar, karşılaştırmalı analiz yapar ve karar notları çıkarır. Belirsiz konularda kanıta dayalı özet üretir.",
+      "floor": 3,
+      "slot": 3,
+      "color": "#6fb3ff",
+      "model": "deepseek/deepseek-v4.1-flash",
+      "profile": "ada",
+      "port": 8644
+    },
+    {
+      "id": "bora",
+      "name": "Bora",
+      "role": "Yazılım",
+      "description": "Kod yazar, hata ayıklar, test eder ve teknik borcu azaltır. Küçük, doğrulanabilir değişikliklerle ilerler.",
+      "floor": 2,
+      "slot": 0,
+      "color": "#f08a5d",
+      "model": "deepseek/deepseek-v4.1-flash",
+      "profile": "bora",
+      "port": 8645
+    },
+    {
+      "id": "kerem",
+      "name": "Kerem",
+      "role": "Veri",
+      "description": "Veri modeli, sorgular, metrikler ve raporlamayla ilgilenir. Sayılarla konuşur, varsayımları veriyle sınar.",
+      "floor": 2,
+      "slot": 1,
+      "color": "#7dd3fc",
+      "model": "deepseek/deepseek-v4.1-flash",
+      "profile": "kerem",
+      "port": 8646
+    },
+    {
+      "id": "ece",
+      "name": "Ece",
+      "role": "Tasarım",
+      "description": "Arayüz, akış ve görsel dil kararlarını üretir. Kullanılabilirlik ve erişilebilirlik kontrollerini gözetir.",
+      "floor": 2,
+      "slot": 3,
+      "color": "#c79bff",
+      "model": "deepseek/deepseek-v4.1-flash",
+      "profile": "ece",
+      "port": 8647
+    },
+    {
+      "id": "emre",
+      "name": "Emre",
+      "role": "Güvenlik",
+      "description": "Yetki, secret yönetimi, bağımlılık ve tehdit modeli kontrolleri yapar. Riskleri erken ve somut biçimde işaretler.",
+      "floor": 2,
+      "slot": 4,
+      "color": "#f87171",
+      "model": "deepseek/deepseek-v4.1-flash",
+      "profile": "emre",
+      "port": 8648
+    },
+    {
+      "id": "lale",
+      "name": "Lale",
+      "role": "İçerik",
+      "description": "Metin, dokümantasyon ve iletişim dilini yazar ve düzenler. Net, kısa ve hedef kitleye uygun anlatım üretir.",
+      "floor": 1,
+      "slot": 0,
+      "color": "#f472b6",
+      "model": "deepseek/deepseek-v4.1-flash",
+      "profile": "lale",
+      "port": 8649
+    },
+    {
+      "id": "zeynep",
+      "name": "Zeynep",
+      "role": "Kalite",
+      "description": "Test planı, kabul kriterleri, regresyon ve kalite kontrollerini yürütür. Yayına çıkmadan önce riskleri kapatır.",
+      "floor": 1,
+      "slot": 1,
+      "color": "#a3e635",
+      "model": "deepseek/deepseek-v4.1-flash",
+      "profile": "zeynep",
+      "port": 8650
+    },
+    {
+      "id": "mert",
+      "name": "Mert",
+      "role": "DevOps",
+      "description": "Konteyner, dağıtım, izleme ve altyapı otomasyonunu yönetir. Operasyonel tekrarları otomatikleştirir.",
+      "floor": 1,
+      "slot": 3,
+      "color": "#94a3b8",
+      "model": "deepseek/deepseek-v4.1-flash",
+      "profile": "mert",
+      "port": 8651
+    }
+  ]
+}
