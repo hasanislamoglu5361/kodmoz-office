@@ -30,9 +30,12 @@ cd kodmoz-office
 npm install
 ```
 
-### 3. Gizli değerleri yerelleştir
+### 3. Gizli değerleri ve Docker modunu ayarla
 
 ```bash
+cp .env.example .env
+# .env içinde HERMES_DOCKER=1 yap (Docker modu)
+
 cp secrets.env.example runtime/secrets.env
 ```
 
